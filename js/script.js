@@ -14,10 +14,7 @@ Consigli del giorno:
 Buon pomeriggio e buon lavoro !!!! :muscolo:
 */
 
-
-
-
-
+// funzione per i numeri randomici univoci
 function getRandUniqNumb(maximum, lenghtNum) {
   const uniNumb = new Set();
   let arrayNumb = [];
@@ -29,7 +26,7 @@ function getRandUniqNumb(maximum, lenghtNum) {
   return arrayNumb;
 }
 
-
+// funzione delle dinamiche di gioco e di controllo risultati
 function PlayGame (numbers) {
   buttPlay.classList.remove('d-none');
   buttPlay.addEventListener('click', function () {
@@ -70,6 +67,7 @@ function PlayGame (numbers) {
   })
 }
 
+// variabili globali + evento sul primo bottone
 let buttGen = document.getElementById('btn-gen');
 let buttPlay = document.getElementById('btn-start');
 let buttSub = document.getElementById('btn-submit');
@@ -97,8 +95,8 @@ buttGen.addEventListener('click', function () {
     col3.classList.add('d-none');
     col4.classList.add('d-none');
     col5.classList.add('d-none');
-  }, 1000);
+  }, 30000);
 
-  setTimeout(PlayGame(numbers), 1500);
+  setTimeout(PlayGame(numbers), 30500);
 
 })
