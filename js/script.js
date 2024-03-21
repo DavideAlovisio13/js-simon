@@ -27,8 +27,7 @@ function getRandUniqNumb(maximum, lenghtNum) {
 }
 
 // funzione delle dinamiche di gioco e di controllo risultati
-function PlayGame (numbers) {
-  buttPlay.classList.remove('d-none');
+function PlayGame(numbers) {
   buttPlay.addEventListener('click', function () {
     let userCol = document.getElementById('userCol');
     let userCol1 = document.getElementById('userCol1');
@@ -41,12 +40,12 @@ function PlayGame (numbers) {
     userCol3.classList.remove('d-none');
     userCol4.classList.remove('d-none');
     buttSub.classList.remove('d-none');
-    buttSub.addEventListener('click', function() {
-      let userNumber =parseInt(document.getElementById('user-n').value);
-      let userNumber1 =parseInt(document.getElementById('user-n1').value);
-      let userNumber2 =parseInt(document.getElementById('user-n2').value);
-      let userNumber3 =parseInt(document.getElementById('user-n3').value);
-      let userNumber4 =parseInt(document.getElementById('user-n4').value);
+    buttSub.addEventListener('click', function () {
+      let userNumber = parseInt(document.getElementById('user-n').value);
+      let userNumber1 = parseInt(document.getElementById('user-n1').value);
+      let userNumber2 = parseInt(document.getElementById('user-n2').value);
+      let userNumber3 = parseInt(document.getElementById('user-n3').value);
+      let userNumber4 = parseInt(document.getElementById('user-n4').value);
       let arrayNumbUser = []
       arrayNumbUser.push(userNumber);
       arrayNumbUser.push(userNumber1);
@@ -62,8 +61,8 @@ function PlayGame (numbers) {
           let result = document.getElementById('result');
           result.innerHTML = 'hai indovinato ' + array;
         }
-      } 
-    })  
+      }
+    })
   })
 }
 
@@ -97,6 +96,10 @@ buttGen.addEventListener('click', function () {
     col5.classList.add('d-none');
   }, 30000);
 
-  setTimeout(PlayGame(numbers), 30500);
+  setTimeout(() => {
+    buttPlay.classList.remove('d-none');
+  }, 30500)
+
+  PlayGame(numbers);
 
 })
